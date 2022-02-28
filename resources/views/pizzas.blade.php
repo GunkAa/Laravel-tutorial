@@ -73,8 +73,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Pizza House<br />
-                    The North's Best Pizzas
+                    Pizzas
                 </div>
             </div>
         </div>
