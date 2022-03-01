@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PizzaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,25 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+#main page
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    // get data form db
-    
-    $pizzas = [
-        ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin & crispy']
-      ];
+#pizza view using PizzaController
+Route::get('/pizzas', [PizzaController::class, 'index']);
 
-      return view('pizzas', [
-        'pizzas' => $pizzas,
-      ]);
-    });
-
-Route::get('/pizzas/{id}', function ($id) {
-    // use the $id variable to Query the db for a record
-      return view('details', ['id' => $id]);
-    });
+#wildcards using PizzaController
+Route::get('/pizzas/{id}', [PizzaController::class, 'show']);
