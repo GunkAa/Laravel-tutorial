@@ -1,7 +1,6 @@
 # Laravel-tutorial
 
-# Use Clone : 
-type in concole
+Use Clone : type in concole
 
 - 1: composer install
 - 2: npm install
